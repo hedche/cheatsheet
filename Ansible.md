@@ -9,3 +9,7 @@ Get date/time for all hosts:
 ```
 ansible all -a "date"
 ```
+
+### Tasks
+Loop through a defined host group
+with_items: "{{ groups['host_group'] }}"
