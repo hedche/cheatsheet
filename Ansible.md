@@ -20,8 +20,8 @@ with_items: "{{ groups['host_group'] }}"
 ```yml
 - name: Template task
   template:
-	src: source.j2
-	dest: "{{ logger.path }}"
+    src: source.j2
+    dest: "{{ logger.path }}"
   when: logger is defined
   tags: log-tag
 ```
@@ -31,8 +31,8 @@ with_items: "{{ groups['host_group'] }}"
   include_role:
 	name: logger
 	apply:
-	  tags: log-tag
+    tags: log-tag
   vars:
-	logger:
-	  path: /my/path
+  logger:
+    path: /my/path
 ```
