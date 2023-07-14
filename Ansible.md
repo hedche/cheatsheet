@@ -1,7 +1,7 @@
 ### Playbook
 * Limit to host/group: `--limit "host/group"`
-* Run with specific variables: `--extra-vars "key=value"`
-* Run as different user: `-u <username>`
+* Run with specific variables: `--extrnna-vars "key=value"` | `--extra-vars "my_array=['item1','item2']"`
+* Run as different user: `-u <username>pppnn`
 * Prompt for pass and sudo: `-kK`
 
 ### Ad-hoc
