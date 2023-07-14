@@ -40,5 +40,5 @@ with_items: "{{ groups['host_group'] }}"
 ### Handlers
 ```yml
 - name: Flush handlers
-  mets: flush_handlers
+  meta: flush_handlers
 ```
