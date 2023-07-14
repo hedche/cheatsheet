@@ -13,3 +13,26 @@ ansible all -a "date"
 ### Tasks
 Loop through a defined host group
 with_items: "{{ groups['host_group'] }}"
+
+### Roles
+#### Template role
+`roles/logger/tasks/main.yml`
+```yml
+- name: Template task
+  template:
+	src: source.j2
+	dest: "{{ logger.path }}"
+  when: logger is defined
+  tags: log-tag
+```
+`roles/other_role/tasks/main.yml`
+```yml
+- name: Configure logger
+  include_role:
+	name: logger
+	apply:
+	  tags: log-tag
+  vars:
+	logger:
+	  path: /my/path
+```
