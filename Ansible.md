@@ -36,3 +36,9 @@ with_items: "{{ groups['host_group'] }}"
   logger:
     path: /my/path
 ```
+
+### Handlers
+```yml
+- name: Flush handlers
+  mets: flush_handlers
+```
