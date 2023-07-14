@@ -29,9 +29,9 @@ with_items: "{{ groups['host_group'] }}"
 ```yml
 - name: Configure logger
   include_role:
-	name: logger
-	apply:
-    tags: log-tag
+    name: logger
+    apply:
+      tags: log-tag
   vars:
   logger:
     path: /my/path
