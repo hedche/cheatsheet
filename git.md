@@ -11,6 +11,8 @@ Resolve conflicts, if any, then stage, commit, and push changes
 ### Bring a file in from another branch to your current one
 `git checkout source_branch -- path/to/file`
 
+git cherry-pick <commit_hash>
+
 Resolve conflicts, if any, then stage, commit, and push changes
 
 ### Stash it
