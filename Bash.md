@@ -1,20 +1,25 @@
-## sed
+# sed
 
 ### Against variables
-sed ‘s/Hello/Hi/g’ <<< “$var”
+`sed ‘s/Hello/Hi/g’ <<< “$var”`
 
 ### Against file
 
-sed ‘s/Hello/Hi/g’ -i /path/goes/here.txt
+`sed ‘s/Hello/Hi/g’ -i /path/goes/here.txt`
 
 ### Delete a line
 
-sed ‘/pattern/d’
+`sed ‘/pattern/d’`
 
 ### Replace with string
 
-sed ‘s/pattern/string/g’
+`sed ‘s/pattern/string/g’`
 
+# grep
+### Find string in files and show filenames
+`grep -H 'my_string' /path/to/multiple/*/*/*`
+
+# Random
 ## Run portion of Bash script as another user
 ```bash
 if [[ $(id -u) -eq 0 ]]; then
