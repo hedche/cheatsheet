@@ -1,24 +1,21 @@
 # sed
-
 ### Against variables
 `sed ‘s/Hello/Hi/g’ <<< “$var”`
-
-### Against file
-
+#### Against file
 `sed ‘s/Hello/Hi/g’ -i /path/goes/here.txt`
-
-### Delete a line
-
+##### Delete a line
 `sed ‘/pattern/d’`
-
-### Replace with string
-
+##### Replace with string
 `sed ‘s/pattern/string/g’`
-
 # grep
 ### Find string in files and show filenames
 `grep -H 'my_string' /path/to/multiple/*/*/*`
 
+# tar
+##### Compress
+`tar -cvzf archive_name.tar.gz directory`
+##### Uncompress
+`tar -xvzf archive_name.tar.gz -C /path/to/dest_dir`
 # Random
 ## Run portion of Bash script as another user
 ```bash
