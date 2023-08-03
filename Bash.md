@@ -18,7 +18,7 @@
 `tar -xvzf archive_name.tar.gz -C /path/to/dest_dir`
 
 # File Descriptors
-Suppress stdout + stderr: `ls non_existent_dir >/dev/null 2>&1` || `ls non_existent_dir &>/dev/null`
+Suppress stdout + stderr: `ls non_existent_dir >/dev/null 2>&1` OR `ls non_existent_dir &>/dev/null`
 
 
 # Random
