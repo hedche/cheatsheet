@@ -20,3 +20,7 @@ Resolve conflicts, if any, then stage, commit, and push changes
 2. Check which stash you want to apply using: `git stash list`
 3. Remove from stash and apply: `git stash pop stash@{n}`
 4. Keep in stash and apply: `git stash apply stash@{n}`
+
+### Unwanted, untracked files
+Preview: `git clean -n`
+Clean: `git clean -f -d` 
