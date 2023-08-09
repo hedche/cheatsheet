@@ -1,12 +1,22 @@
 # git
 
 ### Update your branch with `main`
+#### Option 1
 ```
 git checkout my_branch
 git fetch origin main
 git merge origin/main
 ```
 Resolve conflicts, if any, then stage, commit, and push changes
+#### Option 2
+```
+git checkout my_branch
+git fetch origin
+git rebase origin/main
+#Possible merge conflicts here ...
+# git rebase --continue
+git push origin my_branch --force
+```
 
 ### Bring a file in from another branch to your current one
 `git checkout source_branch -- path/to/file`
