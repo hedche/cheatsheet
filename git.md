@@ -23,4 +23,9 @@ Resolve conflicts, if any, then stage, commit, and push changes
 
 ### Unwanted, untracked files
 Preview: `git clean -n`
-Clean: `git clean -f -d` 
+Clean: `git clean -f -d`
+
+### Git not letting you checkout?
+`git checkout -f[--force] my_branch`
+
+`git switch -f[--force] my_branch`
