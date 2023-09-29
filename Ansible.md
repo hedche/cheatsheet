@@ -1,4 +1,4 @@
-### Playbook
+### Running `ansible-playbook`
 * Limit to host/group: `--limit "host/group"`
 * Run with specific variables: `--extrnna-vars "key=value"` | `--extra-vars "my_array=['item1','item2']"`
 * Run as different user: `-u <username>pppnn`
@@ -10,9 +10,12 @@ Get date/time for all hosts:
 ansible all -a "date"
 ```
 
-### Tasks
+### With Items / Loops
 Loop through a defined host group
 with_items: "{{ groups['host_group'] }}"
+
+### When
+Only run on certain host groups: `when: inventory_hostname in lookup('inventory_hostnames', 'BSs:BMs')`
 
 ### Roles
 #### Template role
