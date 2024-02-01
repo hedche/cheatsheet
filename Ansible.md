@@ -19,18 +19,35 @@ with_items: "{{ groups['host_group'] }}"
 Only run on certain host groups: `when: inventory_hostname in lookup('inventory_hostnames', 'BSs:BMs')`
 
 ### lineinfile
+#### Adding host to /etc/hosts
+```
 - name: Add host to /etc/hosts
-	lineinfile:
-		path: /etc/hosts
-		state: present
-		owner: root
-		group: adm
-		mode: 0644
-		regexp: '^"{{ ip }}" ip.example.com'
-		line: '{{ ip }} ip.example.com'
+    lineinfile:
+      path: /etc/hosts
+      state: present
+      owner: root
+      group: adm
+      mode: 0644
+      regexp: '^"{{ ip }}" ip.example.com'
+      line: '{{ ip }} ip.example.com'
+```
+#### Adding a sudoers.d file
+```
+- name: Add admin to sudoers
+  lineinfile:
+    create: yes
+    state: present
+    owner: root
+    group: root
+    mode: 0600
+    dest: "/etc/sudoers.d/admin"
+    regexp: "admin  ALL=NOPASSWD: /bin/cp *"
+    line: "admin  ALL=NOPASSWD: /bin/cp *"
+    validate: /usr/sbin/visudo -cf %s
+```
 
-### Roles
-#### Template role
+# Roles
+### Template role
 `roles/logger/tasks/main.yml`
 ```yml
 - name: Template task
@@ -52,7 +69,7 @@ Only run on certain host groups: `when: inventory_hostname in lookup('inventory_
     path: /my/path
 ```
 
-### Handlers
+# Handlers
 ```yml
 - name: Flush handlers
   meta: flush_handlers
